@@ -19,6 +19,9 @@
 % math environments and tools
 \usepackage{amsmath}
 
+% fancy todo notes
+\usepackage[colorinlistoftodos,textsize=tiny]{todonotes}
+
 % hyperref should be loaded last, but before cleverref
 % http://www.howtotex.com/packages/9-essential-latex-packages-everyone-should-use/
 \usepackage[colorlinks=false, pdfborder={0 0 0}]{hyperref}
@@ -26,9 +29,15 @@
 % for automatic reference type labelling (e.g. ``Figure 1'') 
 \usepackage{cleveref}
 
+% macros
+% \input{macros}
+
 % bibliography
 \addbibresource{bibliography/bibsonomy.bib}
 \addbibresource{bibliography/main.bib}
+
+% a footnote containing a URL
+\newcommand{\furl}[1]{\footnote{\url{#1}}} 
 
 \title{Writing 101}
 \author{Martin Becker}
@@ -36,6 +45,19 @@
 \begin{document}
 
 \chapter{Introduction}
+
+\chapter{Thoughts on how to write}
+\section{Collection of random thoughts}
+Most of the following list is inspired by Markus
+Strohmaier \furl{http://markusstrohmaier.info} who has an excelent eye
+for presentation.
+\begin{itemize}
+	\item Figure and table captions should always contain a \textit{heading}, 
+	a \textit{description} of the content, and an \text{interpretation}
+	explaining the implications of the depicted information.\todo{Add an example!}
+\end{itemize} 
+
+\listoftodos 
 
 % \printbibliography
 \end{document}
