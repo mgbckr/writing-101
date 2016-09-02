@@ -1,19 +1,41 @@
-%%This is a very basic article template.
-%%There is just one section and two subsections.
-\documentclass{article}
+\documentclass[a4paper]{memoir}
+
+% checks for latex issues related to outdated ways of doing things; also see:
+% http://www.howtotex.com/packages/9-essential-latex-packages-everyone-should-use/
+% http://www.howtotex.com/packages/the-nag-package-warns-you-for-incorrect-latex-usage/
+\RequirePackage[l2tabu, orthodox]{nag}
+
+% improves the spacing between words and letters
+% http://www.howtotex.com/packages/9-essential-latex-packages-everyone-should-use/
+\usepackage{microtype}
+
+% latex implementation of bibtex; we use biber as backend since it seems to be
+% developed in tandem:
+% http://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib
+% You need white space before "backend" doe TeXlipse to pick up biber :D
+% https://sourceforge.net/p/texlipse/discussion/451977/thread/1a984278/#c309 
+\usepackage[ backend=biber,style=authoryear]{biblatex}
+
+% math environments and tools
+\usepackage{amsmath}
+
+% hyperref should be loaded last, but before cleverref
+% http://www.howtotex.com/packages/9-essential-latex-packages-everyone-should-use/
+\usepackage[colorlinks=false, pdfborder={0 0 0}]{hyperref}
+
+% for automatic reference type labelling (e.g. ``Figure 1'') 
+\usepackage{cleveref}
+
+% bibliography
+\addbibresource{bibliography/bibsonomy.bib}
+\addbibresource{bibliography/main.bib}
+
+\title{Writing 101}
+\author{Martin Becker}
 
 \begin{document}
 
+\chapter{Introduction}
 
-\section{Title}
-
-\subsection{Subtitle}
-
-Plain text.
-
-\subsection{Another subtitle}
-
-More plain text.
-
-
+% \printbibliography
 \end{document}
